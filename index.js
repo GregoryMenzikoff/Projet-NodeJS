@@ -1,6 +1,9 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import session from 'express-session';
+import router from './app/router.js';
+import Website from './app/models/Website.js';
+import  website from './app/data/website.js';
 
 dotenv.config()
 
@@ -16,7 +19,18 @@ app.use(session({
     saveUninitialized: true, // génère un id de session pour tous ceux qui n'en ont pas encore
   }));
 
+app.use(express.static('./S06-inte-pilori-GregoryMENZIKOFF/public'))
+
 app.use(express.urlencoded({extended: true}));
+app.use(router)
+
+
+//const user = new Website({title:"title",description: "blabla",adress: "http://toto.fr", appareil: "mobile", level: "bloquant"})
+
+app.get((req,res) => {
+   console.log(website)
+})
+
 
 app.listen(port, () => {
     console.log(`Serveur de demarrage @ http://localhost:${port}`)

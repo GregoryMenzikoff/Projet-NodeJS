@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "git submodule update --recursive --remote & npm i --prefix S06-inte-pilori-GregoryMENZIKOFF & npm run build --prefix S06-inte-pilori-GregoryMENZIKOFF",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
