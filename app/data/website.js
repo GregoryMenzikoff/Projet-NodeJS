@@ -1,34 +1,33 @@
 import Website from "../models/Website.js"
 
-export default [
+export  default [
 
-   new Website(
-    'Oclock.io',
-    "Il y a un gros problème. Je constate de très gros soucis pour naviguer et c'est impossible d'utiliser correctement tous les boutons à disposition.",
-    'https://oclock.io/',
-    'Mobile',
-    'Bloquant',
-   ),
+   new Website({
+   title: 'Oclock.io',
+   description: "Il y a un gros problème. Je constate de très gros soucis pour naviguer et c'est impossible d'utiliser correctement tous les boutons à disposition.",
+   adress: 'https://oclock.io/',
+   appareil: 'Mobile',
+   level: 'Bloquant',
+   }),
 
-   new Website(
-    'NPM',
-    'https://www.npmjs.com/'
-   ),
+  /*new Website({
+   title: 'NPM',
+   adress: 'https://www.npmjs.com/',
+   }),*/
 
-   new Website(
-    'Google',
-    'Il y a un tout petit problème.',
-    'https://www.google.com/',
-    'Ordinateur',
-    'Casse tête',
-   ),
+   new Website({
+      title: 'Google',
+      description: 'Il y a un tout petit problème.',
+      adress: 'https://www.google.com/',
+      appareil: 'Ordinateur',
+      level: 'Casse tete',
+   }),
 
-   new Website(
-    'Wikipédia',
-    "C'est pas jojo",
-    'https://fr.wikipedia.org/',
-    'Mobile',
-    'Bloquant',
-   )
+   new Website({
+      title: 'Wikipedia',
+      description: "C'est pas jojo",
+      adress: 'https://fr.wikipedia.org/',
+      appareil: 'Mobile',
+      level: 'Bloquant',
+   }),
 ]
-

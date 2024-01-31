@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import session from 'express-session';
 import router from './app/router.js';
 import Website from './app/models/Website.js';
-import  website from './app/data/website.js';
+import website  from './app/data/website.js';
 
 dotenv.config()
 
@@ -25,11 +25,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(router)
 
 
-//const user = new Website({title:"title",description: "blabla",adress: "http://toto.fr", appareil: "mobile", level: "bloquant"})
+const user = new Website({title:"Toto", description:"blabla", adress:"http://toto.fr", appareil:"Ordinateur", level:"Casse tete"})
+//console.log(user.level)
 
-app.get((req,res) => {
-   console.log(website)
-})
 
 
 app.listen(port, () => {

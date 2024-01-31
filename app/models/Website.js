@@ -1,5 +1,6 @@
 import validator from "validator";
 
+
 class Website {
     #title;
     #description;
@@ -38,7 +39,7 @@ class Website {
     set title(value) {
         if(typeof value !== 'string') {
             throw new Error('Le titre doit être une chaine de caractére obligatoire')
-        }
+        }  
        this.#title = value
     }
 
@@ -55,16 +56,17 @@ class Website {
 
     set appareil(value) {
         const valueAppareils = ["Mobile", "Ordinateur", "Lecteur d'écran"]
-        const selectAppareil = valueAppareils.find(appareil => appareil.toLowerCase() === value)
+        const selectAppareil = valueAppareils.find(appareil => appareil === value)
         if (!selectAppareil) {
             throw new Error('La chaine de caractere n\'existe pas')
         }
+        
         this.#appareil = selectAppareil
     }
 
     set level(value) {
-        const valueLevels = ["Bloquant", "Genant", "Casse-tete"]
-        const selectLevel = valueLevels.find(level => level.toLowerCase() === value)
+       const valueLevels = ["Bloquant", "Genant", "Casse tete"]
+        const selectLevel = valueLevels.find(level => level === value)
         if (!selectLevel) {
             throw new Error('La chaine de caractere n\'existe pas')
         }
