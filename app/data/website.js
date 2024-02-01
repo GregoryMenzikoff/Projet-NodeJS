@@ -10,10 +10,10 @@ export  default [
    level: 'Bloquant',
    }),
 
-  /*new Website({
+  new Website({
    title: 'NPM',
    adress: 'https://www.npmjs.com/',
-   }),*/
+   }),
 
    new Website({
       title: 'Google',
@@ -31,3 +31,5 @@ export  default [
       level: 'Bloquant',
    }),
 ]
+
+

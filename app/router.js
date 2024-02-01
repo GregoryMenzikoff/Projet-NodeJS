@@ -1,6 +1,6 @@
 import express from 'express';
 import mainController from './controllers/mainController.js';
-import siteDenController from './controllers/siteDenController.js';
+import siteDenController from './controllers/siteController.js';
 import authController from './controllers/authController.js';
 import profilController from './controllers/profilController.js';
 
@@ -8,8 +8,9 @@ import profilController from './controllers/profilController.js';
 const router = express.Router()
 
 router.get('/', mainController.showHome);
-router.get('/plan', /*mainController*/);
-router.get('/contact', /*mainController*/);
+router.get('/plan', mainController.showPlan);
+router.get('/contact', mainController.showContact);
+router.get('/mention', mainController.showMention);
 router.get('/tomates', /*siteDenController*/);
 router.get('/tomates/denoncer', /*siteDenController*/);
 router.post('/tomates/denoncer', /*siteDenController*/)

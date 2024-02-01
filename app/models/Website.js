@@ -49,28 +49,31 @@ class Website {
 
     set adress(value) {
         if(!validator.isURL(value)) {
-            throw new Error('Veuillez saisir un URL')
+            throw new Error('Veuillez saisir une adresse URL')
         }
         this.#adress = value
     }
 
     set appareil(value) {
-        const valueAppareils = ["Mobile", "Ordinateur", "Lecteur d'écran"]
-        const selectAppareil = valueAppareils.find(appareil => appareil === value)
-        if (!selectAppareil) {
-            throw new Error('La chaine de caractere n\'existe pas')
-        }
-        
-        this.#appareil = selectAppareil
+        if(value !== undefined) {
+            const valueAppareils = ["Mobile", "Ordinateur", "Lecteur d'écran"]
+            const selectAppareil = valueAppareils.find(appareil => appareil === value)
+            if (!selectAppareil) {
+                throw new Error('La chaine de caractere n\'existe pas')
+            }
+            this.#level = selectAppareil
+        }       
     }
 
     set level(value) {
-       const valueLevels = ["Bloquant", "Genant", "Casse tete"]
-        const selectLevel = valueLevels.find(level => level === value)
-        if (!selectLevel) {
-            throw new Error('La chaine de caractere n\'existe pas')
+        if(value !== undefined) {
+            const valueLevels = ["Bloquant", "Genant", "Casse tete"]
+            const selectLevel = valueLevels.find(level => level === value)
+            if (!selectLevel) {
+                throw new Error('La chaine de caractere n\'existe pas')
+            }
+            this.#level = selectLevel
         }
-        this.#level = value
     }
 }
 
