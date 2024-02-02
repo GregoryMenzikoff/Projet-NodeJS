@@ -13,15 +13,8 @@ router.get('/contact', mainController.showContact);
 router.get('/mention', mainController.showMention);
 router.get('/tomates', siteDenController.showFSearch);
 router.get('/tomates/denoncer', /*siteDenController*/);
-router.post('/tomates/denoncer', /*siteDenController*/)
-router.get('/tomates/:slug', (req, res, next) => {
-    const slug = req.params.slug
-    console.log(slug)
-    const titleSlug = website.find(web => website.slug === slug)
-    if(titleSlug) {
-        res.render('detail', {website, titleSlug})
-    }
-});
+router.post('/tomates/denoncer', /*siteDenController*/);
+router.get('/tomates/:slug',siteDenController.detail);
 router.get('/connexion', /*authController*/);
 router.post('/connexion', /*authController*/);
 router.get('/inscription', /*authController*/);

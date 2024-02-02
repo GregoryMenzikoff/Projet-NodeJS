@@ -16,6 +16,7 @@ class Website {
         this.adress = config.adress
         this.appareil = config.appareil
         this.level = config.level
+  
     }
 
     get title() {
@@ -39,11 +40,11 @@ class Website {
     }
 
     get slug() {
-        const slug = slugify(this.title, {
+         slugify(title, {
             lower: true
         })
-        console.log(slug)
-        return this.slug = slug
+        //console.log(slug)
+        return this.#title
     }
 
     set title(value) {

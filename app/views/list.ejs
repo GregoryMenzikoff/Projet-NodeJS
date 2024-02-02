@@ -1,7 +1,6 @@
 <%- include('partials/head') %>
   <main class="content">
     <h1 class="content-title"><%= title %></h1>
-    <!-- TODO changer la valeur du h1 en fonction de notre condition  -->
     <section class="segment">
       <h2 class="segment-title">Toutes les tomates</h2>
       <div class="card-container">
@@ -20,7 +19,7 @@
                   <div class="card-content">
                     <h3 class="card-title"><%= web.title %></h3>
                     <p class="card-desc"><%= web.description %>!</p>
-                    <a class="card-more" href="/tomates/<%= web.slug %>">Lire la suite</a>
+                    <a class="card-more" href="/tomates/<%= web.slug%>">Lire la suite</a>
                   </div>
                   <footer class="card-actions">
                     <a class="card-link" href="#">Consulter le site</a>

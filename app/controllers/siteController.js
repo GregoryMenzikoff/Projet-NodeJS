@@ -1,6 +1,7 @@
 import website from "../data/website.js"
 import h1Value from "../data/title.js";
 
+
 const siteDenController = {
      
     showFSearch: (req, res) => {
@@ -31,16 +32,22 @@ const siteDenController = {
           }           
     },
 
-    /*detail: (req, res, next) => {
-      const titleSlug= website.find(web => web.slug === slug);
-      console.log(titleSlug)
-      if (titleSlug) {
-        res.render('detail', { website, titleSlug})
-      }
-      else {
-        next();
-      }
-    },  */
+    detail: 
+    
+    (req, res, next) => {
+    const slug = req.params.slug
+    console.log(slug)
+    const titleSlug = website.filter(web => web.slug === (slug))
+    console.log(slug)
+    console.log(titleSlug)
+    if(!titleSlug) {
+      
+        next()
+    }
+    else {
+      res.render('detail', {website: titleSlug})
+    }
+},
 }
 
 export default siteDenController
