@@ -19,10 +19,10 @@
         </figure>
         <ul class="detail-list">
           <li><span class="detail-label">Reporteur</span> : Marie Dupont</li>
-          <li><span class="detail-label">Type</span> : bloquant</li>
-          <li><span class="detail-label">Support</span> : Ordinateur</li>
+          <li><span class="detail-label">Type</span> : <%= web.level %></li>
+          <li><span class="detail-label">Support</span> : <%= web.appareil %></li>
         </ul>
-        <p class="detail-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid dolore nam ducimus fugiat non sunt voluptatibus ex pariatur iste expedita accusamus quisquam dicta beatae laudantium blanditiis quis tenetur recusandae molestias repellendus, alias doloribus. Quaerat, eligendi sit maiores enim beatae natus labore, sint aliquid architecto pariatur perspiciatis neque facere amet.</p>
+        <p class="detail-content"><%= web.description %></p>
         <footer class="detail-actions">
           <a class="btn">Voir le disfonctionnement</a>
           <button class="btn"><i data-feather="check"></i> Inaccessibilité corrigée</button>
@@ -38,3 +38,5 @@
     </section>
   </main>
 <%- include('partials/footer') %>
+
+<!-- TODO etape 11 : reste à faire apparaitre dans le nouvel article les types et support dans le detail -->

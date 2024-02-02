@@ -1,0 +1,41 @@
+<%- include('partials/head') %>
+<section class="segment">
+  <h2 class="segment-title">Dénoncer un site inaccessible</h2>
+<form class="form" action="/tomates/denoncer" method="post">
+  <% if (typeof alert !== 'undefined') { %>
+    <p role="alert">Erreur : <%= alert %></p>
+  <% } %>
+    <label class="form-field">
+      Titre du dysfonctionnement
+      <input name="title" type="text" class="form-input" >
+    </label>
+    <label class="form-field">
+      Description
+      <textarea name="description" class="form-input form-input--long"></textarea>
+    </label>
+    <label class="form-field">
+      Adresse de la page web
+      <input name="adress" type="url" class="form-input">
+    </label>
+    <label class="form-field">
+      Sur quel type de support
+      <select name="selectAppareil" class="form-input" >
+        <option value="mobile">Mobile</option>
+        <option value="ordinateur">Ordinateur</option>
+        <option value="lecteur d'écran">Lecteur d'écran</option>
+      </select>
+    </label>
+    <label class="form-field">
+      Degré d'importance
+      <select name="selectLevel" class="form-input" >
+        <option value="bloquant">Bloquant</option>
+        <option value="genant">Gênant</option>
+        <option value="casse-tete">Casse tête</option>
+      </select>
+    </label>
+    <div class="segment-actions">
+      <button type="submit" class="btn">Soumette le dysfonctionnement à l'équipe de modération</button>
+    </div>
+  </form>
+</section>
+  <%- include('partials/footer') %>

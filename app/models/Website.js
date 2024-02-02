@@ -1,6 +1,7 @@
 import slugify from "slugify";
 import validator from "validator";
-
+import {valueAppareils} from "../data/title.js"
+import { valueLevels } from "../data/title.js";
 
 class Website {
     #title;
@@ -40,15 +41,13 @@ class Website {
     }
 
     get slug() {
-         slugify(title, {
+        return slugify(this.#title, {
             lower: true
-        })
-        //console.log(slug)
-        return this.#title
+        });
     }
 
     set title(value) {
-        if(typeof value !== 'string') {
+        if(typeof value !== 'string' || value.length === 0) {
             throw new Error('Le titre doit être une chaine de caractére obligatoire')
         }  
        this.#title = value
@@ -67,23 +66,23 @@ class Website {
 
     set appareil(value) {
         if(value !== undefined) {
-            const valueAppareils = ["Mobile", "Ordinateur", "Lecteur d'écran"]
+    
             const selectAppareil = valueAppareils.find(appareil => appareil === value)
             if (!selectAppareil) {
-                throw new Error('La chaine de caractere n\'existe pas')
+                throw new Error("L'appareil selectionner n'est pas conforme")
             }
-            this.#level = selectAppareil
+            this.#appareil = value
         }       
     }
 
     set level(value) {
         if(value !== undefined) {
-            const valueLevels = ["Bloquant", "Genant", "Casse tete"]
+            
             const selectLevel = valueLevels.find(level => level === value)
             if (!selectLevel) {
-                throw new Error('La chaine de caractere n\'existe pas')
+                throw new Error("Le niveau selectionné n'est pas conforme")
             }
-            this.#level = selectLevel
+            this.#level = value
         }
     }
 }
