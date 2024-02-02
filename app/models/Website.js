@@ -1,3 +1,4 @@
+import slugify from "slugify";
 import validator from "validator";
 
 
@@ -7,6 +8,7 @@ class Website {
     #adress;
     #appareil;
     #level;
+    slug;
 
     constructor(config) {
         this.title = config.title
@@ -34,6 +36,14 @@ class Website {
 
     get level() {
         return this.#level
+    }
+
+    get slug() {
+        const slug = slugify(this.title, {
+            lower: true
+        })
+        console.log(slug)
+        return this.slug = slug
     }
 
     set title(value) {

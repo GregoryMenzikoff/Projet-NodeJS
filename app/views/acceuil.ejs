@@ -1,27 +1,4 @@
 <%- include('partials/head') %>
-  <header class="header">
-    <a class="logo" href="/" title="Retour à l'accueil">
-      <img class="logo-img" src="/favicon.ico" alt="PilOri">
-    </a>
-    <nav class="menu">
-      <a class="menu-link" href="/tomates">Toutes les tomates</a>
-      <a class="menu-link" href="/deconnexion">Dénoncer</a>
-    </nav>
-    <div class="header-tools">
-      <form class="search">
-        <input class="search-input" type="search" placeholder="Rechercher...">
-        <button class="search-submit" type="submit">
-          <i data-feather="search"></i>
-        </button>
-      </form>
-      <div class="account">
-        <a id="menuToggler" class="account-link account-link--mobile" href="#"><i data-feather="menu"></i></a>
-        <a id="searchToggler" class="account-link account-link--mobile" href="#"><i data-feather="search"></i></a>
-        <a class="account-link" href="#"><i data-feather="user"></i></a>
-        <a class="account-link" href="#"><i data-feather="log-out"></i></a>
-      </div>
-    </div>
-  </header>
   <main class="content">
     <h1 class="content-title">PilOri</h1>
     <section class="segment">
@@ -53,7 +30,7 @@
                 <img class="card-img" src="./img/ph1.jpg" alt="">
                 <div class="card-content">
                   <h3 class="card-title"><%= web.title %></h3>
-                  <p class="card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, placeat!</p>
+                  <p class="card-desc"><%= web.description %></p>
                   <a class="card-more" href="#">Lire la suite</a>
                 </div>
                 <footer class="card-actions">

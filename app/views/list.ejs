@@ -1,0 +1,38 @@
+<%- include('partials/head') %>
+  <main class="content">
+    <h1 class="content-title"><%= title %></h1>
+    <!-- TODO changer la valeur du h1 en fonction de notre condition  -->
+    <section class="segment">
+      <h2 class="segment-title">Toutes les tomates</h2>
+      <div class="card-container">
+          <% for( const web of website) { %>
+              <article class="card">
+                  <div class="card-tags">
+                    <span class="card-tag">
+                      <%= web.level %>
+                    </span>
+                    <span class="card-tag card-tag--red">
+                      <i data-feather="circle"></i>
+                      130
+                    </span>
+                  </div>
+                  <img class="card-img" src="./img/ph1.jpg" alt="">
+                  <div class="card-content">
+                    <h3 class="card-title"><%= web.title %></h3>
+                    <p class="card-desc"><%= web.description %>!</p>
+                    <a class="card-more" href="/tomates/<%= web.slug %>">Lire la suite</a>
+                  </div>
+                  <footer class="card-actions">
+                    <a class="card-link" href="#">Consulter le site</a>
+                    <button class="card-btn card-btn--red"><i data-feather="circle"></i></button>
+                    <button class="card-btn card-btn--light"><i data-feather="check"></i></button>
+                    <button class="card-btn card-btn--dark"><i data-feather="share-2"></i></button>
+                  </footer>
+                </article>
+              </div>
+              <footer class="segment-actions">
+                <a class="btn" href="#">Tout voir</a>
+              </footer>
+          <% } %>
+      </div>
+<%- include('partials/footer') %>

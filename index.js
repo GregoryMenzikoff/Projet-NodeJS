@@ -2,7 +2,7 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import session from 'express-session';
 import router from './app/router.js';
-
+import pageError from './app/middleware/pageError.js';
 
 dotenv.config()
 
@@ -21,9 +21,10 @@ app.use(session({
 app.use(express.static('./S06-inte-pilori-GregoryMENZIKOFF/public'));
 
 app.use(express.urlencoded({extended: true}));
+
 app.use(router);
 
-
+app.use(pageError.showError)
 
 app.listen(port, () => {
     console.log(`Serveur de demarrage @ http://localhost:${port}`)

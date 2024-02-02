@@ -9,3 +9,26 @@
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+  <header class="header">
+    <a class="logo" href="/" title="Retour à l'accueil">
+      <img class="logo-img" src="/favicon.ico" alt="PilOri">
+    </a>
+    <nav class="menu">
+      <a class="menu-link" href="/tomates">Toutes les tomates</a>
+      <a class="menu-link" href="/deconnexion">Dénoncer</a>
+    </nav>
+    <div class="header-tools">
+      <form class="search" action="/tomates" method="get">
+        <input name="search" class="search-input" type="search" placeholder="Rechercher...">
+        <button class="search-submit" type="submit">
+          <i data-feather="search"></i>
+        </button>
+      </form>
+      <div class="account">
+        <a id="menuToggler" class="account-link account-link--mobile" href="#"><i data-feather="menu"></i></a>
+        <a id="searchToggler" class="account-link account-link--mobile" href="#"><i data-feather="search"></i></a>
+        <a class="account-link" href="#"><i data-feather="user"></i></a>
+        <a class="account-link" href="#"><i data-feather="log-out"></i></a>
+      </div>
+    </div>
+  </header>
