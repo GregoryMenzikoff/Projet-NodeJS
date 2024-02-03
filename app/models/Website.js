@@ -1,7 +1,7 @@
 import slugify from "slugify";
 import validator from "validator";
-import {valueAppareils} from "../data/title.js"
-import { valueLevels } from "../data/title.js";
+import {valueAppareils} from "../data/data.js"
+import { valueLevels } from "../data/data.js";
 
 class Website {
     #title;

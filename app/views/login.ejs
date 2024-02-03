@@ -1,0 +1,26 @@
+<%- include('partials/head') %>
+  <main class="content">
+    <h1 class="content-title">Connexion</h1>
+    <section class="segment">
+      <h2 class="segment-title">
+        Mes identifiants
+      </h2>
+      <form class="form" action="/profil" method="post">
+        <label class="form-field">
+          Email
+          <input type="email" name="email" placeholder="Votre email" class="form-input" <% if (locals.data?.email) { %>value="<%= locals.data.email %>"<% } %>>
+        </label>
+        <label class="form-field">
+          Mot de passe
+          <input type="password" name="password" placeholder="Mot de passe" class="form-input">
+        </label>
+        <div class="segment-actions">
+          <button type="submit" class="btn">Se connecter</button>
+        </div>
+        <div class="segment-actions">
+          <a href="/inscription">Je n'ai pas de compte</a> - <a href="#">Mot de passe oublié</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <%- include('partials/footer') %>

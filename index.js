@@ -22,6 +22,12 @@ app.use(express.static('./S06-inte-pilori-GregoryMENZIKOFF/public'));
 
 app.use(express.urlencoded({extended: true}));
 
+app.use(session({
+  resave: true, // la session est réenregistrée meme si elle n'est pas modifiée
+  secret: process.env.SECRET, // ajoute une part d'aléatoire dans la génération des id de session imprédictible
+  saveUninitialized: true, // génère un id de session pour tous ceux qui n'en ont pas encore
+}));
+
 app.use(router);
 
 app.use(pageError.showError)

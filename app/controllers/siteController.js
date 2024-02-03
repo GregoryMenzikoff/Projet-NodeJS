@@ -1,6 +1,6 @@
 import website from "../data/website.js"
 import Website from "../models/Website.js";
-import {h1Value} from "../data/title.js";
+import {h1Value} from "../data/data.js";
 
 
 const siteDenController = {
@@ -60,11 +60,9 @@ const siteDenController = {
     try { 
       const toto = req.body
       const denonceSite = new Website(toto)
-      console.log(denonceSite)
       website.push(denonceSite)
-      res.render('detail', {website, title: h1Value[0]})
+      res.render('detail', {website: [denonceSite], title: h1Value[0]})
     } catch (error) {
-      console.log(error)
       res.render('formulaire', {alert: error.message, data: req.body, website})
     }  
  }

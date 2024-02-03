@@ -15,11 +15,11 @@ router.get('/tomates', siteDenController.showFSearch);
 router.get('/tomates/denoncer', siteDenController.denoncer);
 router.post('/tomates/denoncer', siteDenController.handleDenoncer);
 router.get('/tomates/:slug',siteDenController.detail);
-router.get('/connexion', /*authController*/);
-router.post('/connexion', /*authController*/);
-router.get('/inscription', /*authController*/);
-router.post('/inscription', /*authController*/);
-router.get('/deconnexion', /*mainController*/);
-router.get('/profil', /*profilController*/);
+router.get('/connexion', authController.login);
+router.post('/connexion', authController.loginAction);
+router.get('/inscription', authController.register);
+router.post('/inscription', authController.registerAction);
+router.get('/deconnexion', authController.logout);
+router.get('/profil', profilController.profil);
 
 export default router

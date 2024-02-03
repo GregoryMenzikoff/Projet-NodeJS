@@ -15,7 +15,8 @@ const mainController = {
 
     showMention: (req, res) => {
         res.render('mentionslegales', {title: 'Mentions legales'})
-    }
+    },
+
 }
 
 export default mainController

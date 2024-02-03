@@ -1,0 +1,26 @@
+<%- include('partials/head') %>
+  <main class="content">
+    <h1 class="content-title">Inscription</h1>
+    <section class="segment">
+      <h2 class="segment-title">
+        Mes informations
+      </h2>
+      <form class="form" action="/connexion" method="post">
+        <label class="form-field">
+          Email
+          <input type="email" name="email" placeholder="Votre email" class="form-input">
+        </label>
+        <label class="form-field">
+          Mot de passe
+          <input type="password" name="password" placeholder="Mot de passe" class="form-input">
+        </label>
+        <div class="segment-actions">
+          <button type="submit" class="btn">S'inscire</button>
+        </div>
+        <div class="segment-actions">
+          <a href="#">J'ai déjà un compte</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
